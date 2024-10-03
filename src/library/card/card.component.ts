@@ -1,4 +1,6 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input, output } from '@angular/core';
+import { InvioDatiOutputCardService } from '../../app/core/services/invio-dati-output-card.service';
+import { log } from 'console';
 
 @Component({
   selector: 'app-card',
@@ -9,8 +11,11 @@ import { Component, input, output } from '@angular/core';
 })
 export class CardComponent {
 
+  
   // INPUT -> permette di passare i dati dal componente padre al componente figlio
   titoloCardfiglio = input.required<string>();
+  riceviOutput = inject(InvioDatiOutputCardService); // import del servizio
+
 
   // OUTPUT -> permette di passare i dati dal componente figlio al componente padre
   outputDati = output<string>();
@@ -21,7 +26,15 @@ export class CardComponent {
   // }
   
   setDatiOutput(){
-    this.outputDati.emit('dati inviati dal componente figlio')
+   this.outputDati.emit('dati inviati dal componente figlio')
   }
+
+  constructor(){
+
+  }
+  // methodRiceviDatiOutput(){
+  //   const newData = 'dati da behaviorsujct';
+  //   this.riceviOutput.methodShowOutput(newData);
+  // }
 
 }

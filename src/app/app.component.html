@@ -1,8 +1,16 @@
 <h1>Nuovo progetto super Quokka</h1>
 
-<app-card [titoloCardfiglio]="titoloPadreInput()" (outputDati)="getDatiOutput($event)">
+<!-- <app-card [titoloCardfiglio]="titoloPadreInput()" (outputDati)="getDatiOutput($event)">
     <div>
         <p>Il contenuto verrà mostrato attraverso l'ng-content</p>
     </div>
-</app-card>
+</app-card> -->
+
+<button routerLink="" routerLinkActive="active">
+    Componente App
+</button>
+<button routerLink="/card" routerLinkActive="active">
+    Componente Card
+</button>
+
 <router-outlet />
