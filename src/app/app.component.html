@@ -1,4 +1,8 @@
 <h1>Nuovo progetto super Quokka</h1>
-<p>Creazione card</p>
-<app-card></app-card>
+
+<app-card [titoloCardfiglio]="titoloPadreInput()">
+    <div>
+        <p>Il contenuto verrà mostrato attraverso l'ng-content</p>
+    </div>
+</app-card>
 <router-outlet />

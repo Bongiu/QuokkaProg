@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CardComponent } from "../library/card/card.component";
 
@@ -11,4 +11,6 @@ import { CardComponent } from "../library/card/card.component";
 })
 export class AppComponent {
   title = 'ProgettoQuokka';
+
+  titoloPadreInput = signal<string>('Questo è il titolo passato in input nella card');
 }
