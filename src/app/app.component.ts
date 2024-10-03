@@ -13,4 +13,8 @@ export class AppComponent {
   title = 'ProgettoQuokka';
 
   titoloPadreInput = signal<string>('Questo è il titolo passato in input nella card');
+
+  getDatiOutput(e:string){
+    console.log(e);
+  }
 }

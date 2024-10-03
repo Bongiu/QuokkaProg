@@ -1,6 +1,6 @@
 <h1>Nuovo progetto super Quokka</h1>
 
-<app-card [titoloCardfiglio]="titoloPadreInput()">
+<app-card [titoloCardfiglio]="titoloPadreInput()" (outputDati)="getDatiOutput($event)">
     <div>
         <p>Il contenuto verrà mostrato attraverso l'ng-content</p>
     </div>
