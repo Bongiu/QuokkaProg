@@ -1,11 +1,12 @@
-import { Component, inject, input, output } from '@angular/core';
+import { Component, computed, inject, input, output } from '@angular/core';
 import { InvioDatiOutputCardService } from '../../app/core/services/invio-dati-output-card.service';
-import { log } from 'console';
+import { DettaglioCardComponent } from './dettaglio-card/dettaglio-card.component';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [],
+  imports: [DettaglioCardComponent, RouterLink, RouterLinkActive],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss'
 })
@@ -13,28 +14,29 @@ export class CardComponent {
 
   
   // INPUT -> permette di passare i dati dal componente padre al componente figlio
-  titoloCardfiglio = input.required<string>();
+  titoloCardPadre = input<string>("titolo");
   riceviOutput = inject(InvioDatiOutputCardService); // import del servizio
 
+  constructor(){
+    this.riceviDatiDettaglio;
+  }
 
   // OUTPUT -> permette di passare i dati dal componente figlio al componente padre
   outputDati = output<string>();
   // creazione dell'evento custom per il passaggio dei dati
 
-  // setDatiOutput(nuovoNome: string){
-  //   this.outputDati.emit(nuovoNome)
-  // }
-  
   setDatiOutput(){
    this.outputDati.emit('dati inviati dal componente figlio')
   }
+  invioDatiInput = input.required<string>();
+// - - - - - - - - - - - - - -Ricezione output - - - - - - - - - - - - - - - - - - - - - 
 
-  constructor(){
-
-  }
-  // methodRiceviDatiOutput(){
-  //   const newData = 'dati da behaviorsujct';
-  //   this.riceviOutput.methodShowOutput(newData);
-  // }
+riceviDatiDettaglio(f:string){
+console.log(f)
+}
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+  
+  
+ 
 
 }

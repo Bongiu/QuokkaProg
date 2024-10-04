@@ -2,8 +2,10 @@
 
     <!-- <h1>{{titoloCardfiglio()}}</h1> -->
     <ng-content></ng-content>
-    <button type="button" (click)="setDatiOutput()">
-        OUTPUT
-    </button>
-
+    <h1>titolo card : {{titoloCardPadre()}}</h1>
+    <!-- <button type="button" routerLink="dettaglioCard" routerLinkActive="active">
+        dettaglio
+    </button> -->
+   
+    <app-dettaglio-card (outputDettaglio)="riceviDatiDettaglio($event)"></app-dettaglio-card>
 </div>
