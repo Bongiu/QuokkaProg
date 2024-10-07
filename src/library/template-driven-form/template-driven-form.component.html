@@ -1,0 +1,24 @@
+<div class="card-container" style="margin: 22px;">
+<p>template-driven-form works!</p>
+
+<form action="" #drivenForm="ngForm" (ngSubmit)="sendData(drivenForm)">
+    <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" [(ngModel)]="nome" name="nome" placeholder="Inserisci il tuo nome" required>
+        <!-- <div [hidden]="nome.valid">
+            Devi compilare il campo
+        </div> -->
+        <p>{{nome}}</p>
+    </div>
+    <div>
+        <label for="cognome">Cognome</label>
+        <input type="text" id="cognome" [(ngModel)]="cognome" name="cognome" placeholder="Inserisci il tuo cognome"  required>
+        <p>{{cognome}}</p>
+    </div>
+    <div>
+        <button type="submit" [disabled]="!drivenForm.valid" (click)="sendDatiForm()">Invia</button>    
+      
+    </div>
+</form>
+
+</div>
