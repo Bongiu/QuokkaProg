@@ -3,12 +3,12 @@ import { Component, output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
-// export interface formReactive{
-//   nome:string;
-//   mail: string;
-//   numero: number;
-//   data: Date
-// }
+export interface formReactiveInterface{
+  nome:string;
+  mail: string;
+  numero: number;
+  data: Date
+}
 
 @Component({
   selector: 'app-reactive-form',
@@ -27,8 +27,8 @@ export class ReactiveFormComponent {
 
     nome = new FormControl('');
     mail = new FormControl('');
-    // numero = new FormControl('');
-    // data = new Date();
+    numero = new FormControl('');
+    data = new Date();
 
     initReactiveForm(){
       this.formReactive = new FormGroup({
@@ -42,6 +42,7 @@ export class ReactiveFormComponent {
     sendForm(){
       if(this.formReactive.valid){
         console.log('il form è valido ',this.formReactive.value);
+        this.sendDatiReactiveForm(this.formReactive.value);
       }
     }
 
@@ -49,10 +50,16 @@ export class ReactiveFormComponent {
       this.initReactiveForm();
     }
 
-    datiReactiveForm = output<any>();
+    
 
-    sendDatiReactiveForm(dat : any){
-      this.datiReactiveForm.emit(dat);
+    datiReactiveForm = output<formReactiveInterface>();
+
+    sendDatiReactiveForm(dat : formReactiveInterface){
+      if(this.formReactive.valid){
+        alert();
+
+        this.datiReactiveForm.emit(dat);
+      }
     }
 
 }

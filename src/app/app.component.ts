@@ -37,4 +37,9 @@ export class AppComponent {
     console.log('output form '+f);
   }
 
+  getReactiveForm(u:any){
+   
+    console.log('dati ricevuti da Reactive Form', u)
+  }
+
 }
