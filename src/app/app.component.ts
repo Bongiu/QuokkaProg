@@ -4,11 +4,12 @@ import { CardComponent } from "../library/card/card.component";
 import { InvioDatiOutputCardService } from './core/services/invio-dati-output-card.service';
 import { TemplateDrivenFormComponent } from '../library/template-driven-form/template-driven-form.component';
 import { log } from 'node:console';
+import { ReactiveFormComponent } from '../library/reactive-form/reactive-form.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CardComponent, RouterLink, RouterLinkActive,TemplateDrivenFormComponent],
+  imports: [RouterOutlet, CardComponent, RouterLink, RouterLinkActive,TemplateDrivenFormComponent,ReactiveFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
